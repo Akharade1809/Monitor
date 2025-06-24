@@ -1,0 +1,27 @@
+-- Schema Definition
+CREATE TABLE student (
+    studentId TEXT NOT NULL PRIMARY KEY,
+    studentFirstName TEXT NOT NULL,
+    studentLastName TEXT NOT NULL,
+    studentMobileNumber TEXT NOT NULL,
+    studentWhatsappNumber TEXT NOT NULL,
+    studentSchoolName TEXT NOT NULL,
+    studentClass REAL NOT NULL
+);
+
+-- Get all students
+getAllStudents:
+SELECT studentId, studentFirstName, studentLastName, studentMobileNumber, studentWhatsappNumber, studentSchoolName, studentClass
+FROM student;
+
+-- Get single student by ID
+getStudent:
+SELECT studentId, studentFirstName, studentLastName, studentMobileNumber, studentWhatsappNumber, studentSchoolName, studentClass
+FROM student
+WHERE studentId = ?;
+
+-- Insert or replace a student
+addStudent:
+INSERT OR REPLACE INTO student (
+    studentId, studentFirstName, studentLastName, studentMobileNumber, studentWhatsappNumber, studentSchoolName, studentClass
+) VALUES (?, ?, ?, ?, ?, ?, ?);
