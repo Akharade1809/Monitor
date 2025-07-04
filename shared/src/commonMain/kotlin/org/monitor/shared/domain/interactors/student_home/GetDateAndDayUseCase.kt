@@ -1,4 +1,4 @@
-package org.monitor.shared.domain.interactors.home
+package org.monitor.shared.domain.interactors.student_home
 
 import org.monitor.shared.domain.entities.DateAndDay
 import org.monitor.shared.domain.interactors.base.UseCaseOut

@@ -15,7 +15,7 @@ open class SplashViewModel : BaseViewModel<SplashScreenContract.Event, SplashScr
 
     private fun haveDelayAndNavigateToHome(){
         launch {
-            delay(2L)
+            delay(10L)
             setEffect {
                 SplashScreenContract.Effect.NavigateToHome
             }

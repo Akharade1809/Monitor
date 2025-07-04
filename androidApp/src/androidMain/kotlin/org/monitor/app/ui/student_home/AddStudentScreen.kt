@@ -1,4 +1,4 @@
-package org.monitor.app.ui.student
+package org.monitor.app.ui.student_home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
@@ -54,7 +54,7 @@ fun AddStudentScreen(
             when(effect){
                 AddStudentContract.Effect.BackNavigation -> navController.popBackStack()
                 AddStudentContract.Effect.NavigateOnSuccessfulAddition -> {
-                    //TODO
+                    navController.navigate("home")
                 }
                 AddStudentContract.Effect.NavigateToStudentListPage-> {
                     //TODO

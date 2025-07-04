@@ -28,6 +28,8 @@ interface AddStudentContract {
             val schoolName: String,
             val studentClass: Double
         ) : Event
+
+        data object NavigateOnSuccessfulAddition :  Event
     }
 
     data class State(

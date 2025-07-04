@@ -1,17 +1,17 @@
-package org.monitor.shared.features.home
+package org.monitor.shared.features.student_home
 
 import org.koin.core.component.inject
 import org.monitor.shared.base.mvi.BaseViewModel
 import org.monitor.shared.base.executor.mvi.BasicUiState
 import org.monitor.shared.domain.entities.DateAndDay
-import org.monitor.shared.domain.interactors.home.GetDateAndDayUseCase
+import org.monitor.shared.domain.interactors.student_home.GetDateAndDayUseCase
 
-open class HomeScreenViewModel : BaseViewModel<HomeScreenContract.Event, HomeScreenContract.State, HomeScreenContract.Effect>(){
+open class StudentHomeScreenViewModel : BaseViewModel<StudentHomeScreenContract.Event, StudentHomeScreenContract.State, StudentHomeScreenContract.Effect>(){
 
 
     private val getDateAndDayUseCase: GetDateAndDayUseCase by inject()
 
-    private var homeInfoModel = HomeScreenInfoModel(
+    private var homeInfoModel = StudentHomeScreenInfoModel(
         date = "",
         day = ""
     )
@@ -33,14 +33,17 @@ open class HomeScreenViewModel : BaseViewModel<HomeScreenContract.Event, HomeScr
     }
 
 
-    override fun createInitialState(): HomeScreenContract.State {
-        return HomeScreenContract.State(BasicUiState.Loading)
+    override fun createInitialState(): StudentHomeScreenContract.State {
+        return StudentHomeScreenContract.State(BasicUiState.Loading)
     }
 
-    override fun handleEvent(event: HomeScreenContract.Event) {
+    override fun handleEvent(event: StudentHomeScreenContract.Event) {
         when (event){
-            HomeScreenContract.Event.NavigateToAddStudentScreen -> setEffect {
-                HomeScreenContract.Effect.NavigateToAddStudentScreen
+            StudentHomeScreenContract.Event.NavigateToAddStudentScreen -> setEffect {
+                StudentHomeScreenContract.Effect.NavigateToAddStudentScreen
+            }
+            StudentHomeScreenContract.Event.NavigateToGetStudentListScreen -> setEffect {
+                StudentHomeScreenContract.Effect.NavigateToStudentListScreen
             }
         }
     }

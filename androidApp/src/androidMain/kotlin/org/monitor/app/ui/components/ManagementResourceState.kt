@@ -2,7 +2,6 @@ package org.monitor.app.ui.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,7 +19,6 @@ fun <T> ManagementResourceState(
 ){
     Box(
         contentAlignment = Alignment.Center,
-        modifier = modifier.systemBarsPadding()
     ){
         when (resourceState){
             is BasicUiState.Sucess -> successView(resourceState.data)

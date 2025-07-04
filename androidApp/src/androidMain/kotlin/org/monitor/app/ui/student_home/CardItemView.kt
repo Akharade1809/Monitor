@@ -1,8 +1,7 @@
-package org.monitor.app.ui.home
+package org.monitor.app.ui.student_home
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -21,7 +20,7 @@ import org.monitor.app.R
 import org.monitor.app.ui.theme.AppTheme
 import org.monitor.app.ui.theme.baseDark
 import org.monitor.app.ui.theme.dim_gray
-import org.monitor.app.ui.theme.surfaceDark
+
 
 
 @Composable

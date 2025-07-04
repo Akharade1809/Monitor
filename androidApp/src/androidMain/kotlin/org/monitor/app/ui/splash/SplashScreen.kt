@@ -34,8 +34,8 @@ fun SplashScreen(
         uiEffect.collectLatest { effect->
             when(effect){
                 SplashScreenContract.Effect.NavigateToHome -> {
-                    parentNavController.navigate(NavItem.Home.route){
-                        popUpTo(NavItem.SplashScreen.route) {inclusive = true}
+                    parentNavController.navigate("home"){
+                        popUpTo("splash-screen") {inclusive = true}
                     }
                 }
             }

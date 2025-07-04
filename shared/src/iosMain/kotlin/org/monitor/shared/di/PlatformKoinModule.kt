@@ -7,7 +7,7 @@ import org.monitor.shared.base.executor.MainDispatcher
 
 actual fun platformKoinModule(): Module = module {
     single { MainDispatcher() }
-//    single<DatabaseDriver> {DatabaseDriverImpl(get()).get}
+ //    single<DatabaseDriver> {DatabaseDriverImpl(get()).get}
 }
 
 actual annotation class CommonParcelize

@@ -1,4 +1,4 @@
-package org.monitor.shared.domain.interactors.student
+package org.monitor.shared.domain.interactors.student_home
 
 import org.monitor.shared.domain.entities.Student
 import org.monitor.shared.domain.interactors.base.UseCaseIn

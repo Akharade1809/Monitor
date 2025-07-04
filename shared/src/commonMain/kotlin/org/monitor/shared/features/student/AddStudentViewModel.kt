@@ -4,7 +4,7 @@ import org.monitor.shared.domain.entities.Student
 import org.koin.core.component.inject
 import org.monitor.shared.base.executor.mvi.BasicUiState
 import org.monitor.shared.base.mvi.BaseViewModel
-import org.monitor.shared.domain.interactors.student.AddStudentUseCase
+import org.monitor.shared.domain.interactors.student_home.AddStudentUseCase
 import org.monitor.shared.extensions.isValidMobileNumber
 import org.monitor.shared.extensions.isValidName
 
@@ -26,6 +26,7 @@ open class AddStudentViewModel :
             AddStudentContract.Event.OnBackPressed -> setEffect { AddStudentContract.Effect.BackNavigation }
             is AddStudentContract.Event.AddStudent -> initiateAddition(event)
             is AddStudentContract.Event.OnFormEdited -> validateForm(event)
+            AddStudentContract.Event.NavigateOnSuccessfulAddition -> setEffect { AddStudentContract.Effect.NavigateOnSuccessfulAddition }
         }
     }
 
@@ -40,7 +41,12 @@ open class AddStudentViewModel :
                 studentSchoolName = event.schoolName,
                 studentClass = event.studentClass,
             )
-        )){}
+        )){result ->
+            result.onSuccess { student ->
+                println("succesfully added the Student : ${student}")
+                setEvent(AddStudentContract.Event.NavigateOnSuccessfulAddition)
+            }
+        }
     }
 
     private fun validateForm(event: AddStudentContract.Event.OnFormEdited) {

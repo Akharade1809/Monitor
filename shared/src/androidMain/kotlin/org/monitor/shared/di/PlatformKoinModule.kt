@@ -10,6 +10,7 @@ import org.monitor.shared.data.factory.DatabaseDriverImpl
 
 actual fun platformKoinModule(): Module = module {
     single { MainDispatcher() }
+    single { IoDispatcher() }
     single<DatabaseDriver> { DatabaseDriverImpl(get()).getDriver() }
 
 }
